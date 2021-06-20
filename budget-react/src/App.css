@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+}
+nav{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-top: vw;
+
+  padding-bottom: 2vw;
+}
+.navButtons{
+  display: flex;
+  justify-content:space-around
+}
+.listItem{
+  /* margin-left: 30vw; */
+  display:grid;
+  grid-template-columns: 1fr,1fr,1fr,1fr;
+}
