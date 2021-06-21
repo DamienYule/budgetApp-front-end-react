@@ -4,8 +4,9 @@ import { useHistory } from "react-router-dom"
 import { apiURL } from "../util/apiURL"
 const API = apiURL();
 
-export default function TransactionsNew() {
+export default function TransactionsNew({ budget }) {
     const history = useHistory()
+
     const [transaction, setTransaction] = useState({
         from: "",
         date: "",
@@ -73,40 +74,41 @@ export default function TransactionsNew() {
         }
         transaction.date = `${day}, ${month} ${date + prefix} at ${hour}:${min + amPm} `
     }
+  
 
     return (
         <div>
             <h1>New Transaction</h1>
             <form onSubmit={handleSubmit} >
-                <label htmlFor="from">From who:</label>
+                <label htmlFor="from">From who: </label>
                 <input
                     id="from"
                     value={transaction.from}
                     type="text"
                     onChange={handleTextChange}
-                    placeholder="Their name"
+                    placeholder="Name"
                     required
                 /><br />
-                <label htmlFor="name">What for:</label>
+                <label htmlFor="name">What for: </label>
                 <input
                     id="name"
                     value={transaction.name}
                     type="text"
                     onChange={handleTextChange}
-                    placeholder="description"
+                    placeholder="Description"
                     required
                 /><br />
-                <label htmlFor="amount">How much:</label>
+                <label htmlFor="amount">How much: </label>
                 <input
                     id="amount"
                     value={transaction.amount}
                     type="number"
                     onChange={handleTextChange}
-                    placeholder="0"
                     required
                 />
                 <button>submit</button>
             </form>
+            {/* {(budget>10)? <h1>This is an error</h1>:<h1>This is an error</h1>}  */}
         </div>
     )
 }

@@ -6,30 +6,33 @@ export default function NavBar({ budget }) {
   const [backgroundColor, setBackgroundColor] = useState('');
 
   const changeBackground = () => {
-    console.log("can you see me")
-    
+
     if (budget >= 1000) {
       setBackgroundColor('green')
-    } else if (budget < 0) {
-      setBackgroundColor('red')
-    }
-  }
 
+    } else if (budget >= 500){
+      setBackgroundColor('greyHigh')
+    } else if (budget >= 200){
+      setBackgroundColor('greyLow')
+    }else if (budget < 0) {
+      setBackgroundColor('red')
+    }else
+    setBackgroundColor('blue')
+
+  }
   useEffect(() => {
     changeBackground()
-  }, [])
+  }, )
 
   return (
-    <nav style={{
-      backgroundColor: { backgroundColor }
-    }}>
-      <h1>Budget Calculator</h1>
+    <nav className={backgroundColor}>
+      <h1>Budget ${budget.toLocaleString('en-US')}</h1>
       <div className="navButtons">
-        <button>
-          <Link to="/transactions">All Transactions</Link>
+        <button className="btn">
+          <Link to="/transactions">Transactions</Link>
         </button>
-        <button>
-          <Link to="/transactions/new">New Transaction</Link>
+        <button className="btn">
+          <Link to="/transactions/new">New</Link>
         </button>
       </div>
 

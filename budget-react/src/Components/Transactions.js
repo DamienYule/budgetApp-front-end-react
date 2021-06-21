@@ -9,25 +9,19 @@ export default function Transactions({ setBudget, budget }) {
 
     useEffect(() => {
         const addTransactions = async (recieveTransactions) => {
-          
-            
             let sum = 0
             recieveTransactions.forEach(el => {
                 sum += Number(el.amount)
             })
-           
-           
+
             setBudget(sum)
-    
         }
         const getTransactions = async () => {
             try {
                 const res = await axios.get(`${API}/transactions`)
                 setTransactions(res.data)
                 addTransactions(res.data)
-             
-                
-            
+
             } catch (error) {
                 setTransactions([])
                 console.log(error)
@@ -36,24 +30,24 @@ export default function Transactions({ setBudget, budget }) {
 
         getTransactions()
 
-    }, [ setBudget])
+    }, [setBudget])
 
 
     // if (sum >= 100){[]}
     return (
         <div>
-            <h2>Transactions</h2>
-            <h3>total: {budget}</h3>
+            <h1>Transactions</h1>
             <ul>
                 {transactions.map((transaction, index) => {
                     return <li key={index} className="listItem">
-                        <div><strong>From:</strong> {transaction.from}<br /></div>
-                        <div></div>  <strong>Date: </strong> {transaction.date}<br />
-                        <div></div>  <strong>Name: </strong> {transaction.name} <br />
-                        <div></div>  <strong>Amount: </strong>{transaction.amount}
+                        <div>{transaction.from}</div>
+                        <div> {transaction.date}</div>  
+                        <div> {transaction.name} </div>  
+                        <div>${Number(transaction.amount).toLocaleString('en-US')}</div>  
                     </li>
                 })}
             </ul>
+                <h3 className="total">Total: ${budget.toLocaleString('en-US')}</h3>
         </div>
     )
 }

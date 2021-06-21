@@ -1,19 +1,130 @@
 h1 {
   text-align: center;
+  color: #727272;
 }
-nav{
+nav {
   margin-left: 2vw;
   margin-right: 2vw;
-  margin-top: vw;
-
+  margin-top:4vw;
+  padding-top: 10px;
   padding-bottom: 2vw;
+  border-radius: 3px;
+  border: 1px solid rgb(150, 150, 150);
+  background-color: rgb(195, 213, 247);
 }
-.navButtons{
+.navButtons {
   display: flex;
-  justify-content:space-around
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 40px;
 }
-.listItem{
+.btn{
+  font-size: 4vw;
+  color: #3d4545;
+
+}
+.red{
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(219, 64, 64, 0.66)
+  ),
+  url(https://img.ma-shops.com/mueller/pic/37100_img250.jpg);
+height: 30vw;
+background-size:cover;
+background-position: center;
+position: relative;
+margin-left: 10vw;
+margin-right: 10vw;
+}
+.green{
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(40, 160, 13, 0.64)
+  ),
+  url(https://img.ma-shops.com/mueller/pic/37896_img538.jpg);
+height: 30vw;
+background-size:cover;
+background-position: center;
+position: relative;
+margin-left: 10vw;
+margin-right: 10vw;
+}
+.greyHigh{
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(166, 222, 154, 0.64)
+  ),
+  url(https://www.leftovercurrency.com/app/uploads/2016/11/50-american-dollars-banknote-obverse-1.jpg);
+height: 34vw; 
+background-size:cover;
+background-position: center;
+position: relative;
+margin-left: 5vw;
+margin-right: 5vw;
+
+
+}
+.greyLow{
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(167, 191, 162, 0.64)
+  ),
+  url(https://img.ma-shops.com/mueller/pic/37099_img252.jpg);
+height: 30vw;
+background-size:cover;
+background-position: center;
+position: relative;
+margin-left: 10vw;
+margin-right: 10vw;
+}
+.blue{
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(55, 130, 176, 0.64)
+  ),
+  url(https://img.ma-shops.com/mueller/pic/37898_img534.jpg);
+height: 30vw;
+background-size:cover;
+background-position: center;
+position: relative;
+margin-left: 10vw;
+margin-right: 10vw;
+}
+button{
+  border-radius: 20px;
+  color: #3d4545;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-decoration: none;
+  margin-left: 2px;
+  background-color: rgba(150, 150, 150, 0.523);
+}
+a{
+  text-decoration: none;
+}
+.listItem {
   /* margin-left: 30vw; */
-  display:grid;
-  grid-template-columns: 1fr,1fr,1fr,1fr;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  margin-bottom: 2px;
+  padding: 5px;
+  margin-right: 4vw;
+}
+form{
+  margin-left: 15vw;
+}
+h3{
+  margin-left: 10vw;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4vw;
 }
