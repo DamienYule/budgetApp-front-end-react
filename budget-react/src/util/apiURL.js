@@ -9,7 +9,5 @@ export const apiURL = () => {
     ) {
         return 'https://budgetting-damien.herokuapp.com'
     }  
-    return 'https://budgetting-damien.herokuapp.com';
+    return `https://budgetting-damien.herokuapp.com`;
 }
-
-//https://budgetting-damien.herokuapp.com/

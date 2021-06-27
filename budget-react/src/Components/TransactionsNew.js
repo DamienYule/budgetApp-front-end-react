@@ -74,41 +74,42 @@ export default function TransactionsNew({ budget }) {
         }
         transaction.date = `${day}, ${month} ${date + prefix} at ${hour}:${min + amPm} `
     }
-  
+
 
     return (
         <div>
             <h1>New Transaction</h1>
-            <form onSubmit={handleSubmit} >
-                <label htmlFor="from">From who: </label>
-                <input
-                    id="from"
-                    value={transaction.from}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Name"
-                    required
-                /><br />
-                <label htmlFor="name">What for: </label>
-                <input
-                    id="name"
-                    value={transaction.name}
-                    type="text"
-                    onChange={handleTextChange}
-                    placeholder="Description"
-                    required
-                /><br />
-                <label htmlFor="amount">How much: </label>
-                <input
-                    id="amount"
-                    value={transaction.amount}
-                    type="number"
-                    onChange={handleTextChange}
-                    required
-                />
-                <button>submit</button>
+            <form className=' flex-form' onSubmit={handleSubmit} >
+                <div >
+                    <label htmlFor="from">From who: </label>
+                    <input
+                        id="from"
+                        value={transaction.from}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Name"
+                        required
+                    /><br />
+                    <label htmlFor="name">What for: </label>
+                    <input
+                        id="name"
+                        value={transaction.name}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Description"
+                        required
+                    /><br />
+                    <label htmlFor="amount">How much: </label>
+                    <input
+                        id="amount"
+                        value={transaction.amount}
+                        type="number"
+                        onChange={handleTextChange}
+                        required
+                    />
+                </div>
+               <div> <button className='submitBtn'>submit</button></div> 
             </form>
-            {/* {(budget>10)? <h1>This is an error</h1>:<h1>This is an error</h1>}  */}
         </div>
     )
 }

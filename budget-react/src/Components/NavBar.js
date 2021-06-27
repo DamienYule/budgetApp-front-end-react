@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react"
+import { useState, useEffect,useContext } from "react"
+import { BudgetContext } from "../Contexts/BudgetContext";
 
 
-export default function NavBar({ budget }) {
+export default function NavBar() {
   const [backgroundColor, setBackgroundColor] = useState('');
-
+  const {budget} = useContext(BudgetContext);
   const changeBackground = () => {
 
     if (budget >= 1000) {
@@ -28,11 +29,11 @@ export default function NavBar({ budget }) {
     <nav className={backgroundColor}>
       <h1>Budget ${budget.toLocaleString('en-US')}</h1>
       <div className="navButtons">
-        <button className="btn">
-          <Link to="/transactions">Transactions</Link>
+        <button>
+          <Link to="/transactions" className="btn">Transactions</Link>
         </button>
-        <button className="btn">
-          <Link to="/transactions/new">New</Link>
+        <button >
+          <Link to="/transactions/new" className="btn">New</Link>
         </button>
       </div>
 

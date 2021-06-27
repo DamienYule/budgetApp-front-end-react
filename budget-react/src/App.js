@@ -4,27 +4,28 @@ import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Transactions from './Components/Transactions';
 import TransactionsNew from './Components/TransactionsNew';
-import { useState } from "react"
-
+import BudgetProvider from "./Contexts/BudgetContext"
+import Edit from "./Components/Edit"
 function App() {
-  const [budget, setBudget] = useState(0)
-  
+
   return (
     <>
-      <Router>
-        <NavBar  budget={budget}/>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route  path="/transactions/new"  budget={budget}>
-            <TransactionsNew />
-          </Route>
-          <Route  path="/transactions">
-            <Transactions setBudget={setBudget}  budget={budget}/>
-          </Route>
-        </Switch>
-      </Router>
+      <BudgetProvider>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/transactions/new" >
+              <TransactionsNew />
+            </Route>
+            <Route path="/transactions/:index">
+              <Edit />
+            </Route>
+            <Route path="/transactions">
+              <Transactions />
+            </Route>
+          </Switch>
+        </Router>
+      </BudgetProvider>
     </>
   );
 }
