@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { apiURL } from "../util/apiURL"
 const API = apiURL();
 
-export default function TransactionsNew({ budget }) {
+export default function TransactionsNew() {
     const history = useHistory()
 
     const [transaction, setTransaction] = useState({
@@ -77,39 +77,46 @@ export default function TransactionsNew({ budget }) {
 
 
     return (
-        <div>
+        <div className="margin-around-edit">
             <h1>New Transaction</h1>
-            <form className=' flex-form' onSubmit={handleSubmit} >
-                <div >
-                    <label htmlFor="from">From who: </label>
-                    <input
-                        id="from"
-                        value={transaction.from}
-                        type="text"
-                        onChange={handleTextChange}
-                        placeholder="Name"
-                        required
-                    /><br />
-                    <label htmlFor="name">What for: </label>
-                    <input
-                        id="name"
-                        value={transaction.name}
-                        type="text"
-                        onChange={handleTextChange}
-                        placeholder="Description"
-                        required
-                    /><br />
-                    <label htmlFor="amount">How much: </label>
-                    <input
-                        id="amount"
-                        value={transaction.amount}
-                        type="number"
-                        onChange={handleTextChange}
-                        required
-                    />
-                </div>
-               <div> <button className='submitBtn'>submit</button></div> 
-            </form>
+            <div className="form-control">
+                <form onSubmit={handleSubmit} >
+                    <div class="input-group mb-3">
+                    <span className="input-group-text margin-label" htmlFor="from" id="inputGroup-sizing-default">From who</span>
+                        <input className="form-control"
+                            id="from"
+                            value={transaction.from}
+                            type="text"
+                            onChange={handleTextChange}
+                            placeholder="Name"
+                            required
+                        /><br />
+                    </div>
+                    <div class="input-group mb-3">
+                    <span className="input-group-text margin-label" htmlFor="name" id="inputGroup-sizing-default">What for:</span>
+                        <input className="form-control"
+                            id="name"
+                            value={transaction.name}
+                            type="text"
+                            onChange={handleTextChange}
+                            placeholder="Description"
+                            required
+                        /><br />
+                    </div> 
+                    <div class="input-group mb-3">
+                        <span className="input-group-text margin-label" htmlFor="amount" id="inputGroup-sizing-default">How much</span>
+                        <input className="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            id="amount"
+                            value={transaction.amount}
+                            type="number"
+                            onChange={handleTextChange}
+                            required />
+                    </div>
+                    <div> <button className="btn btn-primary">Submit</button></div>
+                </form>
+            </div>
         </div>
     )
 }

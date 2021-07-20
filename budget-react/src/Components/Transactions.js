@@ -38,11 +38,13 @@ export default function Transactions() {
             <ul>
                 {transactions.map((transaction, index) => {
                     return <li key={index} >
-                        <Link to={`/transactions/${index}`} className="listItem">
-                            <div>{transaction.from}</div>
-                            <div> {transaction.date}</div>
-                            <div> {transaction.name} </div>
-                            <div>${Number(transaction.amount).toLocaleString('en-US')}</div>
+                        <Link to={`/transactions/show/${index}`} className="removeStyling">
+                            <div className="listItem">
+                                <div>{transaction.from}</div>
+                                <div> {transaction.date}</div>
+                                <div> {transaction.name} </div>
+                                <div>${Number(transaction.amount).toLocaleString('en-US')}</div>
+                            </div>
                         </Link>
                     </li>
                 })}
